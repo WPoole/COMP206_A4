@@ -1,0 +1,38 @@
+<DOCTYPE! html>
+<html>
+<head>
+  <title>Login and Registration</title>
+  <style>
+    #Login{
+      float:left;
+    }
+
+    #Registration{
+      float:right;
+    }
+  </style>
+</head>
+<body>
+  <div id="Login">
+    <h1>Please enter your username and password</h1>
+    <form name="Login" action="login.cgi" method="post"> </br>
+      Username: <input type="text" name="username"></br>
+      Password: <input type="password" name="password"></br>
+      <input type="submit" value="Login"></br>
+    </form>
+  </div>
+  <div id="Registration">
+    <h1>Make an account if you don't already have one!</h1>
+    <form name="Register" action="register.cgi" method="post"> </br>
+      Username: <input type="text" name="username"></br>
+      Password: <input type="password" name="password"></br>
+      Confirm Password: <input type="password" name="confirmation"></br>
+      Full Name: <input type="text" name="fullname"></br>
+      Job Description; <input type="text" name="jobdesc"></br>
+      <input type="submit" value="Register"></br>
+    </form>
+  </div>
+  <div></div>
+</body>
+</html>
+
