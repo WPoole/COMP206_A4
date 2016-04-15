@@ -25,6 +25,14 @@ int isWhiteSpace(char *string) {
 
 int main(){
 
+  char *data = getenv("QUERY_STRING");
+  char string[256];
+  strcpy(string, data);
+
+  char* tok = strtok(string, "=");
+  char* username = strtok(NULL, "\0");
+
+
   printf("Content-Type: text/html;charset=utf-8");
   printf("");
   char *filepath = "friends.txt";
@@ -36,7 +44,7 @@ int main(){
   fgets(line, 299, file_ptr);
   getFirstWord(line, firstUsername);
   printf("%s\n", firstUsername);
-  if(!strcmp(firstUsername, "flo")) {
+  if(!strcmp(firstUsername, username)) {
     // DO NOTHING
   } else {
 
@@ -47,7 +55,7 @@ int main(){
       printf("Content-Type: text/html;charset=utf-8");
       printf("");
       printf("%s\n", firstUsername);
-      if(!strcmp(firstUsername, "flo")) {
+      if(!strcmp(firstUsername, username)) {
         break;
       }
 
@@ -72,15 +80,17 @@ int main(){
   printf("<title>See A Friend</title>");
   printf("</head>");
   printf("<body>");
-  printf("<h1>Welcome to your Personal Dashboard [INSERT USER'S NAME HERE]!</h1>");
+  printf("<h1>Welcome to your Personal Dashboard %s!</h1>", username);
   printf("<h3>Menu: </h3>");
   printf("<form action=\"welcome.html\">");
   printf("<button>Logout</button>");
   printf("</form>");
   printf("<form action=\"makefriends.py\">");
   printf("<button>Make a Friend</button>");
+  printf("<input name=\"username\" type=\"hidden\" value=\"%s\">", username);
   printf("</form>");
   printf("<form action=\"seefriends.cgi\">");
+  printf("<input name=\"username\" type=\"hidden\" value=\"%s\">", username);
   printf("<button>See a Friend</button>");
   printf("</form>");
   printf("<br>");
@@ -89,16 +99,16 @@ int main(){
 
   int countPrintedUsernames = 0;
   printf("<form action=\"friendInfo2.py\" method=\"get\">");
+//  printf("<form action=\"dashboard.py\" method=\"get\">");
   while( token != NULL )
   {
     if(!isWhiteSpace(token)){
       countPrintedUsernames ++;
       printf( "<input type=\"radio\" name=\"username\" value=\"%s\" checked> %s<br>", token, token );
     }
-
     token = strtok(NULL, s);
   }
-
+  printf("<input name=\"current\" type=\"hidden\" value=\"%s\">", username);
   if(countPrintedUsernames != 0) {
     printf("<input type=\"submit\" value=\"See Profile\">");
   } else {

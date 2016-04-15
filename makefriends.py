@@ -8,7 +8,7 @@ userNameIndex=0
 loginUser = ""
 form=""
 fullNameIndex=2
-top="<html><head><title>FRIENDSYAAASSS</title></head><body><p>enwaye fais toi des amis</p>"
+top="<html><body><p>Make new friendgineers!</p>"
 goback=''
 closing= "</body></html>"
 #function that tries to open the user file and populate the user array
@@ -28,7 +28,7 @@ def buildForm():
 			form=form+'<input type="checkbox" name="'+currentUser+'" value="selected">'+currentName.replace("+"," ")+" : "+currentUser+'<br>'
 	form=form+'<input type="hidden" name="username" value="'+loginUser+'">'	
 	form=form+'<input type="submit" value="Add a Friend!"></form>'
-	goback='<form action="dashboard.py" method="get"><input type="hidden" name="username" value="'+loginUser+'"><input type="submit">Return</input><br></form>'
+	goback='<form action="dashboard.py" method="get"><input type="hidden" name="username" value="'+loginUser+'"><input type="submit" name="return" value="Return to Dashboard"></input><br></form>'
 #this function reads all of the user and place them in an array, doenst exclude the current user
 def populateUsersArray():
 	try:

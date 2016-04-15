@@ -22,7 +22,7 @@ if(status == None or status.isspace()):
     print   "</head>"
     print   "<body>"
 
-    print     "<h1>Welcome to Your Dashboard %s!</h1>" % username
+    print     "<h1 style='color:Navy;'>Welcome to Your Dashboard %s!</h1>" % username
 
     print     "<h3>Menu: </h3>"
     print     "<form action=\"welcome.html\">"
@@ -98,7 +98,7 @@ else:
     print   "</head>"
     print   "<body>"
 
-    print     "<h1>Welcome to Your Dashboard %s!</h1>" % username
+    print     "<h1 style='color:Navy;'>Welcome to Your Dashboard %s!</h1>" % username
 
     print     "<h3>Menu: </h3>"
     print     "<form action=\"welcome.html\">"

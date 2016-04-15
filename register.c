@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
+//Function to add user into users.txt
 void addUsr(char *username, char *pass, char *fullName, char *jobDesc){
 	FILE *fp;
         fp = fopen("users.txt","a+");
@@ -48,7 +49,8 @@ int main(){
   	int n = atoi(getenv("CONTENT_LENGTH"));
 
   	fgets(string,n+1,stdin);
-
+	
+	//Decodes string stored in stdin
 	char* token = strtok(string, "=");
 	char* username = strtok(NULL,"&");
 	char* token2 = strtok(NULL,"=");
@@ -59,7 +61,42 @@ int main(){
 	char* fullName = strtok(NULL, "&");
 	char* token5 = strtok(NULL, "=");
 	char* jobDesc = strtok(NULL, "\0");
+	
+	//Check to see if both fullName and jobDesc are empty or if fullName is filled and jobDesc is empty
+	if(strncmp(fullName,"jobdesc",7)==0){
+		printf("Content-Type: text/html;charset=utf-8");
+                printf("Content-Type:text/html\n\n");
+                printf("");
+                printf("<!DOCTYPE html>");
+                printf("<html>");
+                printf("<head>");
+                printf("<title>Login and Registration</title>");
+                printf("</head>");
+                printf("<body>");
+                printf("<h1><a href=login.html>Please fill out each section!</a></h1>");
+                printf("</body>");
+                printf("</html>");
+                return 0;
+	}
+		
+	//Check to see if Full name is empty but jobDesc is filled
+	if(jobDesc=='\0'){
+		printf("Content-Type: text/html;charset=utf-8");
+                printf("Content-Type:text/html\n\n");
+                printf("");
+                printf("<!DOCTYPE html>");
+                printf("<html>");
+                printf("<head>");
+                printf("<title>Login and Registration</title>");
+                printf("</head>");
+                printf("<body>");
+                printf("<h1><a href=login.html>Please fill out each section!</a></h1>");
+                printf("</body>");
+                printf("</html>");
+                return 0;
+	}
 
+	//Check to see if passwords match
 	if(strcmp(pass,confPass)!=0){
 		printf("Content-Type: text/html;charset=utf-8");
         	printf("Content-Type:text/html\n\n");
@@ -75,7 +112,8 @@ int main(){
 		printf("</html>");
 		return 0;
 	}
-
+	
+	//Check to see if username is taken
 	if(checkUsr(username)){
                 printf("Content-Type: text/html;charset=utf-8");
 		printf("Content-Type:text/html\n\n");

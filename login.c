@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 
+//Checks to see if user and correlating password exists
 int findUsr(char* username, char* pass){
         FILE *fpr;
         fpr = fopen("users.txt", "rt");
@@ -35,22 +36,17 @@ int findUsr(char* username, char* pass){
 
 int main(){
 
-  //char *data = getenv("QUERY_STRING");
   char string[400];
   int n = atoi(getenv("CONTENT_LENGTH"));
 
   fgets(string,n+1,stdin);
 
-	
-        //char s[256];
-        //strcpy(s, data);
-	
         char* token = strtok(string, "=");
         char* username = strtok(NULL,"&");
         char* token2 = strtok(NULL,"=");
         char* pass = strtok(NULL, "\0");
 
-	
+	  //If user doesn't exists, redirect to login
           if(findUsr(username,pass)!=0){
                 printf("Content-Type:text/html;charset=utf-8");
                 printf("Content-Type:text/html\n\n");
@@ -66,14 +62,15 @@ int main(){
                 printf("</html>");
                 return 0;
         }
-	        
+	
+	//If check user successful, continue to dashboard
 	printf("Content-Type: text/html;charset=utf-8");
         printf("");
 	printf("Content-Type:text/html\n\n");
         printf("<!DOCTYPE html>");
 	printf("<html>");
         printf("<body>");
-	printf("SUCCESS**"
+	printf("You logged in!");
 	printf("</br>");
 	printf("<form action=\"dashboard.py\" method=\"get\">");
 	printf("<input type=\"hidden\" name=\"username\" value=%s>",username);

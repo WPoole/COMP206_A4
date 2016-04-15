@@ -19,7 +19,7 @@ print "<form action=\"welcome.html\" method=\"get\">"
 print "<button>Logout</button>"
 print "<input type=\"hidden\" name=\"username\" value=\"%s\">" % (user)
 print "</form>"
-print "<form action=\"makeafriend.py\" method=\"get\">"
+print "<form action=\"makefriends.py\" method=\"get\">"
 print "<button>Make a Friend</button>"
 print "<input type=\"hidden\" name=\"username\" value=\"%s\">" % (user)
 print "</form>"
