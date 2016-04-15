@@ -20,7 +20,7 @@ if(status == None or status.isspace()):
     print "<head>"
     print   "<title>Dashboard</title>"
     print   "</head>"
-    print   "<body>"
+    print   "<body style='background-color:lightgrey'>"
 
     print     "<h1 style='color:Navy;'>Welcome to Your Dashboard %s!</h1>" % username
 
@@ -33,7 +33,7 @@ if(status == None or status.isspace()):
     print       "<input type = \"hidden\" name=\"username\" value=\"%s\">" % username
 
     print     "</form>"
-    print     "<form action=\"seefriends.c\">"
+    print     "<form action=\"seefriends.cgi\">"
     print       "<button>See a Friend</button>"
     print       "<input type = \"hidden\" name=\"username\" value=\"%s\">" % username
 
@@ -51,7 +51,7 @@ if(status == None or status.isspace()):
     print       "<input type = \"hidden\" name=\"username\" value=\"%s\">" % username
     print     "</form>"
 
-    print     "<br> <h2><u>Status Updates from You and Your Friends</u></h2>"
+    print     "<br> <h2 style='color:Navy'><u>Status Updates from You and Your Friends</u></h2>"
     usernameAndFriends = None
 
     with open("friends.txt") as f:
@@ -96,7 +96,7 @@ else:
     print "<head>"
     print   "<title>Dashboard</title>"
     print   "</head>"
-    print   "<body>"
+    print   "<body style='background-color:lightgrey'>"
 
     print     "<h1 style='color:Navy;'>Welcome to Your Dashboard %s!</h1>" % username
 

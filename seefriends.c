@@ -79,8 +79,8 @@ int main(){
   printf("<head>");
   printf("<title>See A Friend</title>");
   printf("</head>");
-  printf("<body>");
-  printf("<h1>Welcome to your Personal Dashboard %s!</h1>", username);
+  printf("<body style='background-color:lightgrey'>");
+  printf("<h1 style='color:Navy'>Welcome to your Personal Dashboard %s!</h1>", username);
   printf("<h3>Menu: </h3>");
   printf("<form action=\"welcome.html\">");
   printf("<button>Logout</button>");
@@ -115,7 +115,7 @@ int main(){
     printf("<h3>You don't have any friends yet! To be able to see your friends, please first add some friends, then try this page again.</h3>");
   }
   printf("</form>");
-
+  printf("<form action=\"dashboard.py\" method=\"get\"><input type=\"hidden\" name=\"username\" value=\"%s\"><input type=\"submit\" name=\"return\" value=\"Return to Dashboard\">", username);
 
   printf("</body>");
   printf("</html>");

@@ -89,7 +89,7 @@ def renderHtml():
 	global toAdd
 	print "Content-Type: text/html;charset=utf-8"	
 	print
-	print "<htm><body>You just made new friendgineer friends!"
+	print "<htm><body style='background-color:lightgrey'><h2 style='color:Navy'>You just made new friendgineer friends!</h2>"
 	print makeFriendLink
 	print dashBoard
 	print "</body></html>"

@@ -26,10 +26,10 @@ while 1:
             print "Content-type:text/html\r\n\r\n"
             print ""
             print "<html>"
-            print "<body>"
+            print "<body style='background-color:lightgrey;'>"
 	    print "<h1 style='color:Navy;'>Profile of your friendgineer %s</h1>" % (username)
-            print "<p>Friends : %s</p>" % (friend)
-            print "<p>Name : %s*</p>" % (fullName)
+            print "<p>Username : %s</p>" % (friend)
+            print "<p>Name : %s</p>" % (fullName)
             print "<p>Job description: %s</p>" % (jobDesc)
             break
         else:

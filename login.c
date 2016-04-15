@@ -56,8 +56,8 @@ int main(){
                 printf("<head>");
                 printf("<title>Login and Registration</title>");
                 printf("</head>");
-                printf("<body>");
-                printf("<h1><a href=login.html>Username or Password is incorrect!</a><h1>");
+                printf("<body style='background-color:lightgrey'>");
+                printf("<h1 style='color:Navy'><a href=login.html>Username or Password is incorrect!</a><h1>");
                 printf("</body>");
                 printf("</html>");
                 return 0;
@@ -69,7 +69,7 @@ int main(){
 	printf("Content-Type:text/html\n\n");
         printf("<!DOCTYPE html>");
 	printf("<html>");
-        printf("<body>");
+        printf("<body style='background-color:lightgrey'>");
 	printf("You logged in!");
 	printf("</br>");
 	printf("<form action=\"dashboard.py\" method=\"get\">");
