@@ -8,7 +8,7 @@ userNameIndex=0
 loginUser = ""
 form=""
 fullNameIndex=2
-top="<html><body><p>Make new friendgineers!</p>"
+top="<html><body style='background-color:lightgrey'><h2 style='color:Navy'>Make new friendgineers!</h2>"
 goback=''
 closing= "</body></html>"
 #function that tries to open the user file and populate the user array

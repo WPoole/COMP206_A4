@@ -82,7 +82,7 @@ int main(){
   printf("<body style='background-color:lightgrey'>");
   printf("<h1 style='color:Navy'>Welcome to your Personal Dashboard %s!</h1>", username);
   printf("<h3>Menu: </h3>");
-  printf("<form action=\"welcome.html\">");
+  printf("<form action=\"/~frober6/welcome.html\">");
   printf("<button>Logout</button>");
   printf("</form>");
   printf("<form action=\"makefriends.py\">");

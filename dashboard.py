@@ -16,7 +16,7 @@ print "</head>"
 print "<body style='background-color:lightgrey;'>"
 print "<h1 style='color:Navy;'>Welcome to your Personal Dashboard %s!</h1>" % (user)
 print "<h3>Menu: </h3>"
-print "<form action=\"welcome.html\" method=\"get\">"
+print "<form action=\"/~frober6/welcome.html\" method=\"get\">"
 print "<button>Logout</button>"
 print "<input type=\"hidden\" name=\"username\" value=\"%s\">" % (user)
 print "</form>"
